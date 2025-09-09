@@ -1,0 +1,6 @@
+ID,Control / Requirement,Evidence Type,Evidence Description,Collected By,Date Collected,Storage Location
+E-001,S3 Encryption Enabled,Screenshot,Screenshot of S3 bucket properties showing default encryption with KMS enabled,GRC Analyst,2025-09-08,Policy_Risk_Register_Project/Evidence/s3_encryption.png
+E-002,IAM MFA Enforcement,CLI Output,`aws iam list-virtual-mfa-devices` output showing all active users have MFA devices,Cloud Sec Team,2025-09-08,Policy_Risk_Register_Project/Evidence/iam_mfa.txt
+E-003,CloudTrail Logging,Screenshot,Screenshot of CloudTrail config showing multi-region trail enabled with 365-day retention,GRC Analyst,2025-09-08,Policy_Risk_Register_Project/Evidence/cloudtrail_config.png
+E-004,RDS Encryption,CLI Output,`aws rds describe-db-instances` output confirming storage encrypted with KMS,DBA,2025-09-08,Policy_Risk_Register_Project/Evidence/rds_encryption.txt
+E-005,GuardDuty Findings,JSON Export,Security Hub findings export (findings.json) showing no High severity findings,Security Team,2025-09-08,Policy_Risk_Register_Project/Evidence/findings.json

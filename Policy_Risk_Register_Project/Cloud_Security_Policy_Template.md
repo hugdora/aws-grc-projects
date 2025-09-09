@@ -1,15 +1,15 @@
 # Cloud Security Policy (Template)
 
 ## 1. Purpose
-Define why this policy exists (e.g., protect data in AWS and meet ISO 27001/GDPR/CIS requirements).
-
+This Cloud Security Policy defines the minimum security requirements for the organisation’s use of AWS cloud services.  
+The purpose is to protect organisational data, ensure compliance with applicable regulations, and align with industry best practices.
 
 
 ## 2. Scope
 
-This Cloud Security Policy applies to all cloud environments, services, and users under the organization’s control.
+This Cloud Security Policy applies to all cloud environments, services, and users under the organisation’s control.
 
-- **AWS Accounts**: Production and Non-Production accounts within the AWS Organization.  
+- **AWS Accounts**: Production and Non-Production accounts within the AWS Organisation.  
 - **Regions**: All active AWS regions where services are deployed, with primary focus on `eu-west-2` and `us-east-1`.  
 - **Services in Scope**:  
   - Compute: EC2, Lambda  
@@ -65,7 +65,7 @@ to ensure that only authorised users and services have the permissions they need
 - The AWS root account must be secured with MFA and not used for daily operations.  
 
 ### 5.2 Authentication & MFA
-- **Multi-Factor Authentication (MFA)** is mandatory for all user and administrative access.  
+- **Multi-Factor Authentication (MFA)** is mandatory for all users and administrative access.  
 - API keys must be rotated regularly and never hard-coded in applications or scripts.  
 - Password policies must comply with ISO 27001 Annex A.9 (length, complexity, expiry, lockout).  
 
@@ -81,7 +81,7 @@ to ensure that only authorised users and services have the permissions they need
 
 ### 5.5 Logging & Monitoring
 - All IAM changes (create, modify, delete) must be captured via **AWS CloudTrail** and stored in a centralized S3 bucket.  
-- Unauthorized or suspicious access attempts must trigger alerts in **Security Hub** or SIEM (QRadar).  
+- Unauthorised or suspicious access attempts must trigger alerts in **Security Hub** or SIEM (QRadar).  
 
 
 ## 6. Data Protection & Encryption
@@ -254,7 +254,7 @@ Incident response (IR) must be tested regularly and aligned with regulatory and 
 
 ### 11.3 Response Procedures
 - **Containment**: Isolate affected AWS resources (e.g., disable IAM keys, quarantine EC2 instance).  
-- **Eradication**: Remove malicious code, revoke compromised credentials, patch vulnerabilities.  
+- **Eradication**: Remove malicious code, revoke compromised credentials, and patch vulnerabilities.  
 - **Recovery**: Restore from backups, re-deploy services with secure configurations.  
 - **Evidence Collection**: Preserve CloudTrail logs, GuardDuty findings, and screenshots for forensic analysis.  
 
@@ -389,7 +389,7 @@ Key performance indicators (KPIs) and audit results will be used to ensure compl
 
 ### 15.3 Continuous Improvement
 - Lessons learned from incidents, audits, and risk assessments must feed into policy updates.  
-- Metrics must be analyzed quarterly to identify trends and areas for improvement.  
+- Metrics must be analysed quarterly to identify trends and areas for improvement.  
 - Stakeholders must be informed of major updates to ensure consistent compliance.  
 
 ---
