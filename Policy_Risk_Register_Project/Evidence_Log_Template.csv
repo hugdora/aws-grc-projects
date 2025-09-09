@@ -1,0 +1,3 @@
+Evidence ID,Description,Control/Requirement,Date,Link/Path
+EV-001,Screenshot of Security Hub dashboard,CIS/ISO,,
+EV-002,GuardDuty finding export CSV,Detection/Monitoring,,
