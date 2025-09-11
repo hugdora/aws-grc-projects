@@ -1,0 +1,15 @@
+# Ignore local evidence and large exports if needed
+*.png
+*.jpg
+*.jpeg
+*.pdf
+*.zip
+
+# Node / Python / OS
+__pycache__/
+.DS_Store
+
+# Allow CSV/MD and JSON (findings) by default
+!*.csv
+!*.md
+!*.json

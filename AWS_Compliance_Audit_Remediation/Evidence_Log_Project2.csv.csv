@@ -1,0 +1,16 @@
+ID,Control / Requirement,Evidence Type,Evidence Description,Collected By,Date Collected,Storage Location
+E2-001,Security Hub Enabled,Screenshot,Screenshot of Security Hub dashboard with CIS/FSBP enabled,GRC Analyst,2025-09-09,AWS_Compliance_Audit_Remediation/Evidence/security_hub_enabled.png
+E2-002,GuardDuty Detector,JSON Export,guardduty_findings.json exported via CLI,Security Team,2025-09-09,AWS_Compliance_Audit_Remediation/findings/guardduty_findings.json
+E2-003,IAM Access Analyzer Findings,JSON Export,access_analyzer_findings.json exported via CLI,GRC Analyst,2025-09-09,AWS_Compliance_Audit_Remediation/findings/access_analyzer_findings.json
+E2-004,Config Rules Enabled,Screenshot,Screenshot of AWS Config rules page showing S3 public blocked, GRC Analyst,2025-09-09,AWS_Compliance_Audit_Remediation/Evidence/config_rules.png
+E2-005,Security Hub Findings,JSON Export,securityhub_findings.json high/critical filtered export,Security Team,2025-09-09,AWS_Compliance_Audit_Remediation/findings/securityhub_findings.json
+E2-006,Access Analyzer Findings (Active),JSON Export,Filtered export of ACTIVE Access Analyzer findings via CLI,GRC Analyst,2025-09-10,AWS_Compliance_Audit_Remediation/findings/access_analyzer_findings_active.json
+E2-007,Config Recorder Active,Screenshot,Screenshot of AWS Config > Settings page showing Recorder ON,GRC Analyst,2025-09-10,AWS_Compliance_Audit_Remediation/Evidence/config_recorder.png
+E2-008,Config Delivery Channel,Screenshot,Screenshot of AWS Config > Delivery Channel page with bucket configured,GRC Analyst,2025-09-10,AWS_Compliance_Audit_Remediation/Evidence/delivery_channel.png
+E2-009,Security Hub Findings (After),JSON Export,Post-remediation export of Security Hub findings,GRC Analyst,2025-09-10,findings/securityhub_findings_after.json
+E2-010,GuardDuty Findings (After),JSON Export,Post-remediation export of GuardDuty findings,Security Team,2025-09-10,findings/guardduty_findings_after.json
+E2-011,Access Analyzer Findings (After),JSON Export,Post-remediation export of Access Analyzer findings,GRC Analyst,2025-09-10,findings/access_analyzer_findings_after.json
+E2-020,IAM MFA Enforced,Screenshot,Screenshot showing users with MFA enabled,GRC Analyst,2025-09-11,Evidence/iam_mfa_after.png
+E2-021,Security Hub Findings (After MFA),JSON Export,Post-remediation export after MFA enablement,GRC Analyst,2025-09-11,findings/securityhub_findings_after2.json
+E2-030,EC2 SG Restricted,Screenshot,Screenshot of SG inbound rules restricted to analyst IP,GRC Analyst,2025-09-11,Evidence/sg_restricted_after.png
+E2-031,Security Hub EC2 Findings (After),JSON Export,Post-remediation export of EC2 SG findings,GRC Analyst,2025-09-11,findings/securityhub_findings_ec2_after.json
