@@ -96,14 +96,13 @@ Optionally disable Security Hub/GuardDuty/Inspector and remove Config rules.
 
 ---
 
-## 📊 Before vs After
+## 📊 Before vs After Snapshot
 
-| Service       | Findings (Before) | Findings (After) | Example Remediation |
-|---------------|------------------|------------------|---------------------|
-| Security Hub  | 126              | 131 (new scans)  | MFA, S3, SG hardening |
-| GuardDuty     | Recon detected   | None new         | Blocked public ingress |
-| IAM Analyzer  | 5 ACTIVE         | 0 external risks | Restricted S3/role sharing |
-| EC2 SG        | Open to 0.0.0.0  | Restricted to /32 | Analyst IP only |
+| Service       | Before           | After          | Key Remediations                        |
+|----------------|------------------|------------------|---------------------------------------------|
+| IAM Users      | MFA not enforced | MFA enforced     | Policy + user changes                     |
+| EC2 SG         | Open 0.0.0.0/0   | Restricted to IP  | Removed open ingress                     |
+| S3 Buckets     | Public access     | Blocked + Encrypt | Block Public Access + Default encryption |
 
 ---
 
