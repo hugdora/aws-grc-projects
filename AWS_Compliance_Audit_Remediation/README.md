@@ -66,39 +66,86 @@ Optionally disable Security Hub/GuardDuty/Inspector and remove Config rules.
 
 ---
 
-## 📂 Deliverables
-- `Audit_Remediation_Plan.csv` — tracked findings, mappings, remediation  
-- `findings/*.json` — exported findings  
-- `Evidence/*` — screenshots, CLI outputs, and proof
+# AWS GRC Projects – AWS Compliance Audit & Remediation
+
+## 📌 Overview
+This project simulates a **Governance, Risk, and Compliance (GRC) audit on AWS**, focused on identifying, remediating, and tracking high-risk findings across **Security Hub, AWS Config, GuardDuty, and IAM Access Analyzer**.  
+
+The work mirrors real-world compliance tasks mapped to **CIS AWS Foundations Benchmark** and **ISO 27001** controls.
 
 ---
 
-## 🔎 Mapping Cheatsheet (examples)
-- **S3 public access** → CIS 3.1, ISO 27001 A.9/A.13  
-- **IAM without MFA** → CIS 1.x, ISO 27001 A.9  
-- **RDS not encrypted** → CIS 2.x, ISO 27001 A.10  
-- **Open SSH to 0.0.0.0/0** → CIS 4.x, ISO 27001 A.13  
-- **GuardDuty recon** → NIST CSF (DE.CM), ISO 27001 A.12
+## ⚙️ Tools & Services Used
+- **AWS Security Hub** – Findings & compliance checks  
+- **AWS Config** – Resource compliance & delivery channels  
+- **AWS GuardDuty** – Threat detection (recon/port scanning)  
+- **IAM Access Analyzer** – Public / external access detection  
+- **EC2 Security Groups** – Network hardening  
+- **S3** – Public access remediation  
+- **PowerShell + AWS CLI** – Automation, evidence export  
+- **CSV tracking** – Audit Remediation Plan & Evidence Log  
 
 ---
 
-## 📋 Evidence Guidance
-Capture console screenshots (Security Hub dashboard, S3 bucket config), CLI outputs, and JSON exports.  
-Reference them in the `Evidence` column of `Audit_Remediation_Plan.csv` and store files under `./Evidence` or `./findings`.
+## 🔍 What I Did
+1. **Enabled core services** (Security Hub, GuardDuty, Config, Access Analyzer).  
+2. **Collected baseline findings** (JSON exports for Security Hub, GuardDuty, IAM Access Analyzer).  
+3. **Created an Audit Remediation Plan** mapping findings to CIS & ISO controls.  
+4. **Executed remediation**:
+   - Enforced **IAM MFA** for users.  
+   - Restricted **EC2 Security Group** open ports (22/3389) to analyst IP.  
+   - Applied **S3 Block Public Access** and encryption.  
+5. **Re-collected findings (after remediation)** to demonstrate reduced risks.  
+6. **Logged evidence** (screenshots + JSON exports) in an **Evidence Log CSV**.
 
 ---
 
-## 📦 How to Run
-```bash
-# 1) Edit REGION in scripts, then run
-bash ./scripts/enable_services.sh
+## 📊 Before vs After
 
-# 2) Trigger a few misconfigs intentionally (then fix later)
+| Service       | Findings (Before) | Findings (After) | Example Remediation |
+|---------------|------------------|------------------|---------------------|
+| Security Hub  | 126              | 131 (new scans)  | MFA, S3, SG hardening |
+| GuardDuty     | Recon detected   | None new         | Blocked public ingress |
+| IAM Analyzer  | 5 ACTIVE         | 0 external risks | Restricted S3/role sharing |
+| EC2 SG        | Open to 0.0.0.0  | Restricted to /32 | Analyst IP only |
 
-# 3) Export findings
-bash ./scripts/export_findings.sh
+---
 
-# 4) Update Audit_Remediation_Plan.csv with mappings + remediation
+## 📂 Evidence
 
-# 5) After remediation, export again and capture 'after' evidence
-```
+All evidence is tracked in:  
+- **`Audit_Remediation_Plan.csv`** → Findings, mapping, remediation, status  
+- **`Evidence_Log_Project2.csv`** → Screenshots & JSON exports collected  
+
+Example evidence files:
+- `Evidence/iam_mfa_after.png` → Screenshot of MFA enforcement  
+- `findings/securityhub_findings_after2.json` → Post-remediation Security Hub export  
+- `Evidence/sg_restricted.png` → Screenshot of updated EC2 SG inbound rules  
+
+---
+
+## 📑 Example Remediation Entries
+
+**IAM MFA Enforcement**  
+- **Before**: IAM user without MFA  
+- **Remediation**: Enabled MFA & enforced policy  
+- **Evidence**: `Evidence/iam_mfa_after.png` + JSON export  
+- **Status**: ✅ Closed  
+
+**EC2 Security Groups**  
+- **Before**: SSH/RDP open to 0.0.0.0/0  
+- **Remediation**: Restricted to analyst IP (78.146.x.x/32)  
+- **Evidence**: `Evidence/sg_restricted.png` + Security Hub findings  
+- **Status**: ✅ Closed  
+
+---
+
+## 📈 Workflow Diagram
+
+```mermaid
+flowchart TD
+    A[Enable AWS Services<br>Security Hub / Config / GuardDuty / Access Analyzer] --> B[Collect Baseline Findings<br>JSON Exports + Evidence]
+    B --> C[Create Audit Remediation Plan<br>Map to CIS & ISO 27001]
+    C --> D[Apply Remediations<br>MFA, SG Hardening, S3 Block Public Access]
+    D --> E[Collect Findings After<br>Evidence Logs + Screenshots]
+    E --> F[Close Findings & Track in CSV<br>Audit_Remediation_Plan.csv & Evidence_Log.csv]
