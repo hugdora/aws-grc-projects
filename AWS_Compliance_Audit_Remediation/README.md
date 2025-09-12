@@ -1,6 +1,11 @@
 # AWS Compliance Audit & Remediation
 
-## 📌 Overview
+## 📌 OVerview
+This project simulates a **Governance, Risk, and Compliance (GRC) audit on AWS**, focused on identifying, remediating, and tracking high-risk findings across **Security Hub, AWS Config, GuardDuty, and IAM Access Analyzer**.  
+
+The work mirrors real-world compliance tasks mapped to **CIS AWS Foundations Benchmark** and **ISO 27001** controls.
+
+## 📌 Objective
 Hands-on audit of an AWS environment using native services (Security Hub, GuardDuty, IAM Access Analyzer, AWS Config).  
 Findings are mapped to **CIS AWS Foundations** and **ISO 27001 Annex A**; a **Remediation Plan** tracks fixes, owners, and evidence.
 
@@ -63,15 +68,6 @@ Re-export findings to show improvement and attach before/after evidence.
 ### Step 6 — Cleanup
 Terminate EC2/RDS and remove test S3 buckets after saving evidence.  
 Optionally disable Security Hub/GuardDuty/Inspector and remove Config rules.
-
----
-
-# AWS GRC Projects – AWS Compliance Audit & Remediation
-
-## 📌 Overview
-This project simulates a **Governance, Risk, and Compliance (GRC) audit on AWS**, focused on identifying, remediating, and tracking high-risk findings across **Security Hub, AWS Config, GuardDuty, and IAM Access Analyzer**.  
-
-The work mirrors real-world compliance tasks mapped to **CIS AWS Foundations Benchmark** and **ISO 27001** controls.
 
 ---
 

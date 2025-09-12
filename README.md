@@ -23,7 +23,7 @@ Each project demonstrates how to apply compliance frameworks (ISO 27001, SOC 2, 
 - Map findings against **CIS Benchmarks** and **ISO 27001 Annex A** controls.  
 - Build a **Remediation Plan** with prioritized actions, owners, and audit evidence.  
 
-📁 [View Project](./AWS_Compliance_Audit_Remediation) *(to be added)*  
+📁 [View Project](./AWS_Compliance_Audit_Remediation)  
 
 ---
 
