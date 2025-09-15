@@ -55,3 +55,11 @@ Created by Huguette Dora Edjangue — aspiring **Cloud Security / GRC Analyst** 
 Connect on [LinkedIn] www.linkedin.com/in/hugdora | Showcase on GitHub.  
 
 ---
+
+## ?? Mean Time To Remediate (MTTR)
+<!-- MTTR_START -->
+| Severity | Avg Hours | Avg Days |
+|----------|----------:|---------:|
+| INFORMATIONAL | 90.08 | 3.75 |
+| MEDIUM | 0 | 0 |
+<!-- MTTR_END -->
