@@ -56,10 +56,25 @@ Connect on [LinkedIn] www.linkedin.com/in/hugdora | Showcase on GitHub.
 
 ---
 
-## ?? Mean Time To Remediate (MTTR)
+## Mean Time To Remediate (MTTR)
+
+**Overall MTTR:** **85.86 hours** (~**3.58 days**) across **342** resolved findings.  
+_Source: Security Hub `CreatedAt → UpdatedAt` for findings with `Workflow.Status=RESOLVED` or `RecordState=ARCHIVED`._
+
 <!-- MTTR_START -->
 | Severity | Avg Hours | Avg Days |
 |----------|----------:|---------:|
 | INFORMATIONAL | 90.08 | 3.75 |
 | MEDIUM | 0 | 0 |
 <!-- MTTR_END -->
+
+**Evidence:**  
+- [`securityhub_findings_after2.json`](AWS_Compliance_Audit_Remediation/findings/securityhub_findings_after2.json)  
+- [`mttr_resolved_findings.csv`](AWS_Compliance_Audit_Remediation/findings/mttr_resolved_findings.csv)  
+- [`mttr_by_severity.md`](AWS_Compliance_Audit_Remediation/findings/mttr_by_severity.md)
+
+
+> ℹ️ *Why are some severities `0`?*  
+> A few findings were resolved immediately after creation (same timestamp).  
+> A filtered view (ignoring deltas < 5 minutes) is available in
+> `mttr_resolved_findings_min5m.csv` and `mttr_by_severity_min5m.md` (if generated).
