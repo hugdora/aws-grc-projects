@@ -10,3 +10,4 @@ A-008,RDS,DB instance/snapshot not encrypted,CIS 2.1; ISO 27001 A.10,High,Enable
 A-009,EC2,Security Group allows 0.0.0.0/0 (SSH/3389),CIS 4.1; ISO 27001 A.13,Medium,Restrict to corporate IP/bastion/VPN; add Config rule to prevent open ingress,DevOps,Closed,findings/securityhub_findings.json
 A-010,GuardDuty,Recon/port scanning from external IP,NIST CSF DE.CM; ISO 27001 A.12,Medium,Investigate source IP; block at NACL/WAF; review VPC Flow Logs,SOC,Open,findings/guardduty_findings.json
 A-011,Access Analyzer,External access to role/bucket detected,NIST CSF PR.AC; ISO 27001 A.9,High,Remove external principals or add condition keys; re-review sharing,GRC/Cloud,Open,findings/access_analyzer_findings_active.json
+M-001,Metrics,Track MTTR for resolved findings,CIS 1.1 / ISO 27001 A.12,Info,Calculate and publish MTTR each sprint/quarter,GRC Analyst,In Progress,AWS_Compliance_Audit_Remediation/findings/mttr_resolved_findings.csv

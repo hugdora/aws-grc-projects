@@ -16,3 +16,4 @@ E2-030,EC2 SG Restricted,Screenshot,Screenshot of SG inbound rules restricted to
 E2-031,Security Hub EC2 Findings (After),JSON Export,Post-remediation export of EC2 SG findings,GRC Analyst,2025-09-11,findings/securityhub_findings_ec2_after.json
 E2-050,Security Hub MTTR Report,CSV Export,Per-finding MTTR computed from CreatedAt→UpdatedAt for RESOLVED/ARCHIVED,GRC Analyst,2025-09-15,AWS_Compliance_Audit_Remediation/findings/mttr_resolved_findings.csv
 E2-051,Security Hub Findings (After2),JSON Export,Snapshot used for MTTR calculation,GRC Analyst,2025-09-15,AWS_Compliance_Audit_Remediation/findings/securityhub_findings_after2.json
+E2-052,MTTR by Severity (Markdown),Markdown,Rendered table for README and review,GRC Analyst,2025-09-15,AWS_Compliance_Audit_Remediation/findings/mttr_by_severity.md
