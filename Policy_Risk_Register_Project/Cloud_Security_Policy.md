@@ -61,7 +61,7 @@ to ensure that only authorised users and services have the permissions they need
 
 ### 5.1 Identity Management
 - All AWS account access must be integrated with the corporate Identity Provider (IdP) via **SSO** where possible.  
-- Long-lived IAM users are prohibited; instead, IAM roles and temporary credentials (STS) must be used.  
+- Long-lived IAM users are prohibited; instead, IAM roles and temporary credentials Security Token Service (STS) must be used with federated login.  
 - The AWS root account must be secured with MFA and not used for daily operations.  
 
 ### 5.2 Authentication & MFA
@@ -69,7 +69,7 @@ to ensure that only authorised users and services have the permissions they need
 - API keys must be rotated regularly and never hard-coded in applications or scripts.  
 - Password policies must comply with ISO 27001 Annex A.9 (length, complexity, expiry, lockout).  
 
-### 5.3 Authorization & Privilege Management
+### 5.3 Authorisation & Privilege Management
 - Permissions must follow the **least privilege principle**, granting only the access required for a role.  
 - Privileged operations (e.g., IAM changes, KMS key management, network modifications) must require documented approval.  
 - Use **permission boundaries** or **service control policies (SCPs)** to enforce compliance guardrails across accounts.  
@@ -80,7 +80,7 @@ to ensure that only authorised users and services have the permissions they need
 - Evidence of access reviews must be recorded in the **Evidence Log** for audits.  
 
 ### 5.5 Logging & Monitoring
-- All IAM changes (create, modify, delete) must be captured via **AWS CloudTrail** and stored in a centralized S3 bucket.  
+- All IAM changes (create, modify, delete) must be captured via **AWS CloudTrail** and stored in a centralised S3 bucket.  
 - Unauthorised or suspicious access attempts must trigger alerts in **Security Hub** or SIEM (QRadar).  
 
 
@@ -111,13 +111,12 @@ Encryption at rest and in transit is mandatory for all sensitive and confidentia
 ### 6.4 Public Access & Guardrails
 - **S3 Block Public Access** must be enabled at the account level.  
 - Any exceptions must be documented, risk-assessed, and approved by the CISO.  
-- AWS Config rules must enforce “no public S3 buckets” and “no unencrypted RDS/EBS volumes.”  
+- AWS Config rules must enforce “no public S3 buckets”, “no unencrypted RDS/EBS volumes”, and  “no unencrypted S3 buckets” 
 
 ### 6.5 Logging & Monitoring
 - AWS CloudTrail and Config must log all encryption-related changes (e.g., disabling bucket encryption, key deletion).  
 - Security Hub must be enabled to continuously check encryption compliance.  
 - Non-compliant resources must trigger alerts in SIEM (e.g., QRadar).  
-
 
 ## 7. Logging, Monitoring & Detection
 
@@ -137,13 +136,13 @@ All logging and monitoring controls must be implemented, monitored, and regularl
 
 ### 7.3 Threat Detection
 - **Amazon GuardDuty** must be enabled in all accounts and regions to detect malicious activity.  
-- Findings must be integrated into **AWS Security Hub** for centralized visibility.  
+- Findings must be integrated into **AWS Security Hub** for centralised visibility.  
 - High-severity findings must trigger alerts in the SIEM (QRadar).  
 
-### 7.4 Centralized Monitoring
+### 7.4 Centralised Monitoring
 - **AWS Security Hub** must be enabled with **CIS Benchmarks** and **Foundational Security Best Practices** standards.  
 - Alerts must be sent to the SOC/Security team for triage and escalation.  
-- Metrics (e.g., number of non-compliant resources, MTTR for findings) must be reported quarterly.  
+- Metrics (e.g., number of non-compliant resources, MTTR (Mean Time To Remediate) for findings) must be reported quarterly.  
 
 ### 7.5 Evidence & Audit Readiness
 - Evidence of logging and monitoring configurations must be documented in the **Evidence Log**.  
@@ -283,7 +282,7 @@ All vendor relationships must include formal due diligence, documented risk asse
 
 ### 12.1 Vendor Due Diligence
 - Security and compliance reviews must be conducted before engaging any third-party or SaaS provider.  
-- Vendors must demonstrate compliance with recognized frameworks (e.g., ISO 27001, SOC 2, GDPR).  
+- Vendors must demonstrate compliance with recognised frameworks (e.g., ISO 27001, SOC 2, GDPR).  
 - Critical vendors must provide recent **penetration test reports** or **security certifications**.  
 
 ### 12.2 Risk Assessment
