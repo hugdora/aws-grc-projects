@@ -68,6 +68,15 @@ _Source: Security Hub `CreatedAt → UpdatedAt` for findings with `Workflow.Stat
 | MEDIUM | 0 | 0 |
 <!-- MTTR_END -->
 
+### 📊 MTTR by Severity
+
+#### MTTR (Average Hours)
+![MTTR by Severity (Hours)](AWS_Compliance_Audit_Remediation/findings/mttr_by_severity_hours.png)
+
+#### MTTR (Average Days)
+![MTTR by Severity (Days)](AWS_Compliance_Audit_Remediation/findings/mttr_by_severity_days.png)
+
+
 **Evidence:**  
 - [`securityhub_findings_after2.json`](AWS_Compliance_Audit_Remediation/findings/securityhub_findings_after2.json)  
 - [`mttr_resolved_findings.csv`](AWS_Compliance_Audit_Remediation/findings/mttr_resolved_findings.csv)  
