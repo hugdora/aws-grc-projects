@@ -51,7 +51,7 @@ Each project demonstrates how to apply compliance frameworks (ISO 27001, SOC 2, 
 ---
 
 ## 👤 Author
-Created by Huguette Dora Edjangue — aspiring **Cloud Security / GRC Analyst** with AWS expertise.  
+Created by Huguette Dora Edjangue — **Cloud Security / GRC Analyst** with AWS expertise.  
 Connect on [LinkedIn] www.linkedin.com/in/hugdora | Showcase on GitHub.  
 
 ---
